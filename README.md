@@ -11,3 +11,8 @@ This is a toy app using the FastAPI library. It's shows
 
 todo
 + build a UI (spa? react? or go with mvc core?)
++ use praw instead of json url calls (like in tbot) then can send media content
+
+long term
++ android app consumes the api (very simple display list of items) and like articles
++ recomm engine maps likes to semantically analysed (or maybe just similarly tagged) articles
