@@ -1,1 +1,1 @@
-from .newsapi import NewsApi
+from .plugin import NewsApi

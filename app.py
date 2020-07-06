@@ -24,7 +24,8 @@ from auth.sec import Token
 
 providers = {
     'Reddit' : 'sources.reddit', #class name: 'location of class'
-    'NewsApi' : 'sources.newsapi'
+    'NewsApi' : 'sources.newsapi',
+    'HackerNews': 'sources.hackernews'
 }
 
 news_manager = NewsManager(providers)
