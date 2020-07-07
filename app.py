@@ -68,7 +68,7 @@ async def protected(token:str=Depends(oauth2_scheme)):
 @app.get("/news")
 async def news(query:str=None, token:str=Depends(oauth2_scheme)):
     try:
-        return news_manager.fetch_news(query)
+        return news_manager.fetch_articles(query)
     except InvalidAPIKey as e:
         provider = e.provider
         raise HTTPException(status_code=401, detail=f'{provider} : Invalid API key')
