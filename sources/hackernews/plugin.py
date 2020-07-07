@@ -14,7 +14,7 @@ class HackerNews(SourceOfNews):
     def __init__(self):
         super().__init__('hackernews')
 
-    def get_articles(self, topic=None, limit=25):
+    def get_news(self, topic=None, limit=25):
         hapi = HackerNewsApi()
         articles = hapi.get_topstories(limit)        
         return self.parse_data(articles)
