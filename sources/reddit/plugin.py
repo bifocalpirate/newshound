@@ -12,11 +12,11 @@ class Reddit(SourceOfNews):
     BASE_URIS = ['https://www.reddit.com/r/news']
     def __init__(self):
         super().__init__('reddit')
-    def get_news(self, topic=None):        
+    def get_articles(self, topic=None, limit=25):        
         if topic is None:
             request_url = f'{self.BASE_URIS[0]}/.json'
         else:
-            request_url = f'{self.BASE_URIS[0]}/search.json?restrict_sr=on&q={topic}'
+            request_url = f'{self.BASE_URIS[0]}/search.json?restrict_sr=on&limit={limit}&q={topic}'        
         logging.info(f'REDDIT DATA URL {request_url}')
         try:            
             req = requests.get(request_url, headers =REQUEST_HEADERS)

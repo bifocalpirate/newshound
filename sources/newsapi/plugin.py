@@ -19,13 +19,13 @@ class NewsApi(SourceOfNews):
             raise ApiKeyMissing(self.__class__.__name__)
         self.API_KEY = API_KEY
 
-    def get_articles(self, topic=None):
+    def get_articles(self, topic=None, limit=25):
         q_param = 'general' if topic is None else topic
+        self.limit = limit
         request_url = f'{self.BASE_URI}q={q_param}&apiKey={self.API_KEY}'
-        logging.info(request_url)
-        
+        logging.info(request_url)        
         try:            
-            req =requests.get(request_url, timeout=REQUEST_TIMEOUT)
+            req =requests.get(request_url, timeout=REQUEST_TIMEOUT) #is there a way to limit number of items returned?
             req.raise_for_status()
         except requests.exceptions.ConnectionError as e:
             raise e
@@ -39,7 +39,7 @@ class NewsApi(SourceOfNews):
         posts = []
         logging.info(data)
         articles = data.get('articles',{})        
-        for article in articles:
+        for article in articles[1:self.limit]:
             posts.append({
                 'headline':article.get(FieldMapper.HEADLINE.value),
                 'link':article.get(FieldMapper.LINK.value),
