@@ -19,7 +19,7 @@ class NewsApi(SourceOfNews):
             raise ApiKeyMissing(self.__class__.__name__)
         self.API_KEY = API_KEY
 
-    def get_news(self, topic=None):
+    def get_articles(self, topic=None):
         q_param = 'general' if topic is None else topic
         request_url = f'{self.BASE_URI}q={q_param}&apiKey={self.API_KEY}'
         logging.info(request_url)
