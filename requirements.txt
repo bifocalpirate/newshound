@@ -13,7 +13,7 @@ passlib==1.7.2
 pkg-resources==0.0.0
 pycodestyle==2.6.0
 pycparser==2.20
-pydantic==1.5.1
+pydantic==1.6.2
 PyJWT==1.7.1
 python-dotenv==0.13.0
 python-multipart==0.0.5
