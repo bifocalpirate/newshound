@@ -16,7 +16,7 @@ pycparser==2.20
 pydantic==1.5.1
 PyJWT==1.7.1
 python-dotenv==0.13.0
-python-multipart==0.0.5
+python-multipart==0.0.18
 requests==2.24.0
 six==1.15.0
 starlette==0.13.4
